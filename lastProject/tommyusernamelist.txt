@@ -1,3 +1,7 @@
 debian
 root
-
+ubuntu
+arnew
+sigurda
+sigurdkb
+admin
