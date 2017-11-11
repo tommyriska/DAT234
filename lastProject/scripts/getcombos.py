@@ -4,7 +4,7 @@ import itertools
 # returns them as strings in a list
 def makecombos(words, length_limit):
 	combos = []
-	
+
 	for i in range(0, len(words)+1):
 
 		if i >= length_limit:

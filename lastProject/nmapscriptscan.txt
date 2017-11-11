@@ -1,0 +1,154 @@
+# Nmap 7.50 scan initiated Sat Nov 11 18:53:00 2017 as: nmap --script=all -o nmapscriptscan.txt 172.16.0.41
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+| broadcast-dns-service-discovery: 
+|   224.0.0.251
+|     64738/tcp mumble
+|_      Address=172.16.0.36 fe80:0:0:0:f816:3eff:fe39:1fba
+| broadcast-igmp-discovery: 
+|   172.16.0.36
+|     Interface: eth0
+|     Version: 2
+|     Group: 224.0.0.251
+|     Description: mDNS (rfc6762)
+|_  Use the newtargets script-arg to add the results as targets
+| broadcast-netbios-master-browser: 
+|_ip  server  domain
+|_eap-info: please specify an interface with -e
+| targets-asn: 
+|_  targets-asn.asn is a mandatory parameter
+Nmap scan report for dat234-target01-g06.iktstack.local (172.16.0.41)
+Host is up (0.0010s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+|_banner: SSH-2.0-OpenSSH_7.4p1 Ubuntu-10
+| ssh-hostkey: 
+|   2048 4a:c7:6e:ca:4a:20:09:14:bb:fd:d7:72:94:b5:51:c5 (RSA)
+|   256 4d:cd:82:c7:f2:36:9f:ad:1c:e3:bf:b1:f6:8a:b9:98 (ECDSA)
+|_  256 9d:57:52:dc:03:f8:2d:d5:bc:25:6c:2f:69:df:67:59 (EdDSA)
+| ssh2-enum-algos: 
+|   kex_algorithms: (10)
+|   server_host_key_algorithms: (5)
+|   encryption_algorithms: (6)
+|   mac_algorithms: (10)
+|_  compression_algorithms: (2)
+80/tcp open  http
+|_citrix-brute-xml: FAILED: No domain specified (use ntdomain argument)
+|_citrix-enum-apps-xml: ERROR: Script execution failed (use -d to debug)
+|_citrix-enum-servers-xml: ERROR: Script execution failed (use -d to debug)
+| http-aspnet-debug: 
+|_  status: DEBUG is enabled
+| http-brute:   
+|_  Path "/" does not require authentication
+|_http-chrono: Request times for /; avg: 581.91ms; min: 452.39ms; max: 706.82ms
+|_http-comments-displayer: Couldn't find any comments.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-date: Sat, 11 Nov 2017 18:25:06 GMT; +1m08s from local time.
+|_http-devframework: Couldn't determine the underlying framework or CMS. Try increasing 'httpspider.maxpagecount' value to spider more pages.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /wp-login.php: Possible admin folder
+|   /login/: Login page
+|   /robots.txt: Robots file
+|   /wp-login.php: Wordpress login page.
+|   /readme.html: Interesting, a readme.
+|   /0/: Potentially interesting folder
+|   /members/: Potentially interesting folder
+|_  /register/: Potentially interesting folder
+|_http-errors: Couldn't find any error pages.
+|_http-feed: Couldn't find any feeds.
+|_http-fetch: Please enter the complete path of the directory to save data in.
+| http-headers: 
+|   Date: Sat, 11 Nov 2017 18:25:08 GMT
+|   Server: Apache/2.4.10 (Debian)
+|   X-Powered-By: PHP/5.6.31
+|   Location: http://10.225.147.51/
+|   Content-Length: 0
+|   Connection: close
+|   Content-Type: text/html; charset=UTF-8
+|   
+|_  (Request type: GET)
+|_http-mobileversion-checker: No mobile version detected.
+|_http-php-version: Version from header x-powered-by: PHP/5.6.31
+|_http-referer-checker: Couldn't find any cross-domain scripts.
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-security-headers: 
+|_http-server-header: Apache/2.4.10 (Debian)
+| http-sitemap-generator: 
+|   Directory structure:
+|   Longest directory structure:
+|     Depth: 0
+|     Dir: /
+|   Total files found (by extension):
+|_    
+|_http-slowloris: false
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-title: Did not follow redirect to http://10.225.147.51/
+| http-useragent-tester: 
+|   
+|     Allowed User Agents:
+|     Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)
+|     libwww
+|     lwp-trivial
+|     libcurl-agent/1.0
+|     PHP/
+|     Python-urllib/2.5
+|     GT::WWW
+|     Snoopy
+|     MFC_Tear_Sample
+|     HTTP::Lite
+|     PHPCrawl
+|     URI::Fetch
+|     Zend_Http_Client
+|     http client
+|     PECL::HTTP
+|     Wget/1.13.4 (linux-gnu)
+|     WWW-Mechanize/1.34
+|_  
+|_http-userdir-enum: Potential Users: user
+| http-vhosts: 
+|_127 names had status 301
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+| http-waf-detect: IDS/IPS/WAF detected:
+|_dat234-target01-g06.iktstack.local:80/?p4yl04d3=<script>alert(document.cookie)</script>
+| http-wordpress-brute: 
+|   Accounts: No valid accounts found
+|_  Statistics: Performed 0 guesses in 1 seconds, average tps: 0.0
+| http-wordpress-enum: 
+| Search limited to top 100 themes/plugins
+|   plugins
+|     akismet
+|   themes
+|     twentyfifteen 1.8
+|     twentysixteen 1.3
+|_    twentyseventeen 1.3
+|_http-xssed: ERROR: Script execution failed (use -d to debug)
+MAC Address: FA:16:3E:36:20:E0 (Unknown)
+
+Host script results:
+|_clock-skew: mean: 1m07s, deviation: 0s, median: 1m07s
+| dns-brute: 
+|_  DNS Brute-force hostnames: No results.
+|_fcrdns: PASS (dat234-target01-g06.iktstack.local)
+|_ipidseq: All zeros
+|_path-mtu: PMTU == 9110
+| qscan: 
+| PORT  FAMILY  MEAN (us)  STDDEV  LOSS (%)
+| 1     0       350.40     85.61   0.0%
+| 22    0       357.33     101.09  10.0%
+|_80    0       455.44     187.98  10.0%
+|_sniffer-detect: Likely in promiscuous mode (tests: "11111111")
+| unusual-port: 
+|_  WARNING: this script depends on Nmap's service/version detection (-sV)
+
+Post-scan script results:
+| reverse-index: 
+|   22/tcp: 172.16.0.41
+|_  80/tcp: 172.16.0.41
+# Nmap done at Sat Nov 11 19:24:23 2017 -- 1 IP address (1 host up) scanned in 1883.09 seconds
